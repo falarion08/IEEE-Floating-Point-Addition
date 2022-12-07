@@ -60,7 +60,7 @@ function add() {
       
     }
    
-     
+    var message = "";
      
     let x =  normalize(operands[0]);
     let y = normalize(operands[1]);
@@ -69,16 +69,20 @@ function add() {
 
     align(x, y,supported);
 
-     if(signs[0])
+     if(signs[0]){
         x.oprnd = TwosComp(x.oprnd);
-
-   if(signs[1])
-        y.oprnd = TwosComp(y.oprnd);
+        message  = message + '-'
+    }
+    message = message + x.oprnd +"x2^" +x.exp +" + ";
     
+     if(signs[1]){
+         
+        message = message + '-'
+        y.oprnd = TwosComp(y.oprnd);
+      }
+     message =message +  y.oprnd + "x2^" + y.exp;
 
-        console.log(x,y);
-        results[0].innerHTML = x.oprnd + "x2^" +x.exp +" + " + y.oprnd + "x2^"+ y.exp;
-
+    results[0].innerHTML = message;
     
         /* ADD OPERATION */
         let carry = 0;
@@ -149,8 +153,21 @@ function add() {
         final.oprnd = result;
         final.exp = x.exp;
         
-        results[1].innerHTML = x.oprnd + "x2^" +x.exp +" + " + y.oprnd + "x2^"+ y.exp + " = "+final.oprnd+"x2^"+final.exp;
- 
+                message = "";
+
+        if(signs[0]){
+            x.oprnd = TwosComp(x.oprnd);
+            message  = message + '-'
+        }
+        message = message + x.oprnd +"x2^" +x.exp +" + ";
+        
+         if(signs[1]){
+             
+            message = message + '-'
+            y.oprnd = TwosComp(y.oprnd);
+          }
+         message =message +  y.oprnd + "x2^" + y.exp;
+    
         let z = normalize(final.oprnd);
         results[2].innerHTML = final.oprnd + "x2^" + final.exp;
         final.exp = final.exp + z.exp
