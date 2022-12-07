@@ -1,0 +1,77 @@
+body{
+    margin: 0;
+    background-color:rgb(148, 186, 167)
+}
+header{
+    background-color:rgb(57, 96, 96);
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom:5px solid black;
+    color:whitesmoke;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+table{
+    width: 100%;
+
+}
+table,table th, table td{
+     
+    border: 2px solid black;
+    background-color:rgb(32, 98, 67);
+}
+ 
+table tr{
+    text-align: justify;
+}
+ 
+
+#outer_container{
+     
+    color: white;
+    margin-top: 5%;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(62, 82, 78);
+    border: 2px solid black;
+    width: 85%;
+    border-radius: 10px;
+    height:540px;
+    overflow-y: scroll;
+  
+     
+}
+
+#form_container{
+    margin-top: 30px;  
+    text-align: center;
+  
+}
+ 
+#form_container button{
+    height: 30px;
+    width: 100px;
+    background-color: rgb(66, 163, 66);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border-radius: 5px;
+}
+#form_container button:hover{
+    background-color: rgb(93, 241, 93);
+}
+#form_container button:active{
+    background-color: rgb(66, 163, 66);
+}
+#results_container{
+   text-align:  center;
+}
