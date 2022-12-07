@@ -27,7 +27,7 @@ function add() {
     var exp = [0,0];
     var operation = form.querySelector('#rounding_operation').value;
     var supported = parseInt(form.querySelector('#digit_support').value);
-    var prompt = "";
+ 
 
     if(check()){
     if(operation == "grs"){
@@ -60,7 +60,7 @@ function add() {
       
     }
    
-    var message = "";
+ 
      
     let x =  normalize(operands[0]);
     let y = normalize(operands[1]);
@@ -68,6 +68,8 @@ function add() {
     y['exp'] = y['exp'] + exp[1];
 
     align(x, y,supported);
+
+    var message = "";
 
      if(signs[0]){
         x.oprnd = TwosComp(x.oprnd);
@@ -152,10 +154,8 @@ function add() {
         result = result.join('');
         final.oprnd = result;
         final.exp = x.exp;
-        
-                message = "";
-
-        if(signs[0]){
+        message = "";
+ if(signs[0]){
             x.oprnd = TwosComp(x.oprnd);
             message  = message + '-'
         }
@@ -168,6 +168,7 @@ function add() {
           }
          message =message +  y.oprnd + "x2^" + y.exp;
     
+        results[1].innerHTML = message + " = " + final.oprnd + "x2^" +final.exp;
         let z = normalize(final.oprnd);
         results[2].innerHTML = final.oprnd + "x2^" + final.exp;
         final.exp = final.exp + z.exp
